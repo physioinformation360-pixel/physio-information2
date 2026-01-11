@@ -3,187 +3,258 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Physio Information | Premium Physiotherapy Care</title>
+<title>Physio Information | Better Than Before</title>
 
-<!-- Premium Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --royal-blue:#0b1c2d;
-  --deep-blue:#081624;
+  --navy:#0b1f33;
+  --navy-light:#102a44;
   --gold:#d4af37;
-  --soft-gold:#f3e5ab;
-  --text-light:#e6edf5;
+  --white:#ffffff;
+  --muted:#cfd8e3;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-  font-family:'Poppins',sans-serif;
-  background:radial-gradient(circle at top,var(--royal-blue),var(--deep-blue));
-  color:var(--text-light);
+  font-family:'Inter',sans-serif;
+  background:radial-gradient(circle at top,var(--navy-light),var(--navy));
+  color:var(--white);
+  min-height:100vh;
   overflow-x:hidden;
 }
 
-/* ---------- HERO ---------- */
+/* Hero Section */
 .hero{
   min-height:100vh;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:80px 20px;
-  position:relative;
+  padding:30px 20px;
 }
 
-/* subtle luxury glow */
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(212,175,55,.08), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(212,175,55,.06), transparent 40%);
-  animation:float 12s infinite alternate ease-in-out;
-}
-@keyframes float{
-  from{transform:translateY(0)}
-  to{transform:translateY(-40px)}
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:720px;
-}
-
-/* ---------- LOGO ---------- */
-.logo-wrap{
-  width:150px;
-  height:150px;
-  margin:0 auto 25px;
+/* Logo */
+.logo{
+  width:130px;
+  height:130px;
   border-radius:50%;
-  background:radial-gradient(circle,var(--soft-gold),var(--gold));
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 0 60px rgba(212,175,55,.45);
-}
-.logo-wrap img{
-  width:85%;
-  height:85%;
-  object-fit:contain;
-  background:white;
-  border-radius:50%;
+  background:#fff;
   padding:10px;
+  box-shadow:0 0 40px rgba(212,175,55,.6);
+  animation:fadeIn 1.2s ease;
+}
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
 }
 
-/* ---------- TEXT ---------- */
-.hero h1{
-  font-family:'Cinzel',serif;
-  font-size:clamp(2.4rem,6vw,3.8rem);
+/* Headings */
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;
   letter-spacing:2px;
+  margin-top:25px;
   color:var(--gold);
-  margin-bottom:10px;
 }
 
 .tagline{
-  font-size:1.05rem;
+  margin-top:8px;
+  font-size:1rem;
   opacity:.9;
-  margin-bottom:30px;
 }
 
-/* ---------- TRUST PILLS ---------- */
-.trust{
+.quote{
+  margin-top:18px;
+  font-style:italic;
+  font-size:.95rem;
+  color:var(--muted);
+}
+
+/* Buttons */
+.actions{
+  display:flex;
+  gap:15px;
+  margin-top:28px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.btn{
+  padding:12px 26px;
+  border-radius:30px;
+  font-size:.95rem;
+  font-weight:500;
+  text-decoration:none;
+  transition:.3s ease;
+}
+
+.btn-gold{
+  background:linear-gradient(135deg,#f5d76e,var(--gold));
+  color:#000;
+  box-shadow:0 10px 25px rgba(212,175,55,.4);
+}
+
+.btn-gold:hover{
+  transform:translateY(-2px);
+}
+
+/* Info Chips */
+.chips{
+  margin-top:30px;
   display:flex;
   flex-wrap:wrap;
-  gap:12px;
+  gap:10px;
   justify-content:center;
-  margin-bottom:35px;
 }
 
-.trust span{
-  padding:10px 18px;
-  border-radius:30px;
+.chip{
+  padding:8px 16px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.25);
+  font-size:.8rem;
   background:rgba(255,255,255,.05);
-  border:1px solid rgba(212,175,55,.35);
-  font-size:.85rem;
-  backdrop-filter:blur(8px);
 }
 
-/* ---------- CTA ---------- */
-.cta{
-  display:inline-block;
-  padding:16px 38px;
-  border-radius:50px;
-  background:linear-gradient(45deg,var(--gold),var(--soft-gold));
-  color:#000;
-  font-weight:600;
-  text-decoration:none;
-  box-shadow:0 20px 60px rgba(212,175,55,.5);
-  transition:.4s;
-}
-.cta:hover{
-  transform:translateY(-4px) scale(1.02);
-  box-shadow:0 30px 80px rgba(212,175,55,.7);
+/* Section */
+.section{
+  padding:60px 22px;
+  max-width:900px;
+  margin:auto;
+  text-align:center;
 }
 
-/* ---------- WHATSAPP FLOAT ---------- */
+.section h2{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+
+.section p{
+  font-size:.95rem;
+  line-height:1.7;
+  color:var(--muted);
+}
+
+/* Card */
+.card{
+  background:rgba(255,255,255,.05);
+  border-radius:18px;
+  padding:25px;
+  margin-top:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+/* Contact */
+.contact{
+  font-size:.95rem;
+  margin-top:15px;
+  line-height:1.8;
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:25px;
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+/* WhatsApp Floating */
 .whatsapp{
   position:fixed;
   bottom:20px;
   right:20px;
-  background:#25D366;
-  color:white;
-  padding:14px 22px;
-  border-radius:50px;
+  background:#25d366;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:30px;
   text-decoration:none;
   font-weight:600;
-  box-shadow:0 15px 40px rgba(37,211,102,.6);
-  z-index:999;
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 
-/* ---------- MOBILE ---------- */
-@media(max-width:600px){
-  .logo-wrap{width:130px;height:130px}
+/* Animation */
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
 }
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
 
-    <!-- LOGO -->
-    <div class="logo-wrap">
-      <img src="logo.png" alt="Physio Information Logo">
-    </div>
+  <div class="logo">
+    <!-- REPLACE logo.png with your logo file name -->
+    <img src="logo.png" alt="Physio Information Logo">
+  </div>
 
-    <!-- BRAND -->
-    <h1>PHYSIO INFORMATION</h1>
-    <p class="tagline">Better Than Before</p>
+  <h1>PHYSIO INFORMATION</h1>
+  <div class="tagline">Better Than Before</div>
+  <div class="quote">Teaching is better than treating</div>
 
-    <!-- TRUST SIGNALS -->
-    <div class="trust">
-      <span>✔ Evidence-Based Care</span>
-      <span>✔ Clinical Expertise</span>
-      <span>✔ Patient-Focused Recovery</span>
-      <span>✔ Professional Physiotherapy</span>
-    </div>
+  <div class="chips">
+    <div class="chip">Evidence-Based Care</div>
+    <div class="chip">Clinical Expertise</div>
+    <div class="chip">Patient-Focused Recovery</div>
+    <div class="chip">Professional Physiotherapy</div>
+  </div>
 
-    <!-- CTA -->
-    <a class="cta" href="https://wa.me/919600030932" target="_blank">
-      Book Consultation
-    </a>
+  <div class="actions">
+    <a href="tel:9600030932" class="btn btn-gold">Call Now</a>
+    <a href="https://wa.me/919600030932" class="btn btn-gold">WhatsApp</a>
+  </div>
 
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <h2>Welcome to Physio Information</h2>
+  <p>
+    Chennai’s premier physiotherapy platform delivering expert clinical care,
+    innovative rehabilitation solutions, and patient education for long-term recovery.
+  </p>
+
+  <div class="card">
+    <h2>About Dr. Krishna S</h2>
+    <p>
+      Dr. Krishna S, PT, PGDCR is a certified clinical physiotherapist and researcher
+      with experience in treating complex musculoskeletal, orthopedic, and neurological conditions.
+    </p>
+    <p>
+      Expertise includes Trigger Point Therapy, Maitland & Mulligan mobilizations,
+      Stroke & Parkinson’s rehabilitation, and customized exercise programs.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Consultation Options</h2>
+    <p>
+      In-clinic services in Chennai, Tamil Nadu and virtual consultations via Google Meet / Zoom
+      for pain relief, mobility improvement, and preventive physiotherapy care.
+    </p>
+  </div>
+
+  <div class="card contact">
+    📞 9600030932 <br>
+    ✉️ physioinformation360@gmail.com <br>
+    🔗 linkedin.com/in/44krishna-s/
   </div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/919600030932" target="_blank">
-  WhatsApp Now
-</a>
+<footer>
+  © Physio Information • Move Better. Live Stronger.
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919600030932">WhatsApp Now</a>
 
 </body>
 </html>
