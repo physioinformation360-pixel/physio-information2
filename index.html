@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="description" content="Physio Information Chennai – Evidence-based physiotherapy, rehabilitation, and virtual consultation by Dr. Krishna S. Teaching is better than treating.">
+<meta name="keywords" content="Physiotherapy Chennai, Rehabilitation Center, Neuro Rehab, Orthopedic Physio, Online Physio Consultation">
+<meta name="author" content="Dr. Krishna S, PT">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Physio Information | Better Than Before</title>
 
-<!-- Fonts -->
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --navy:#0b1f33;
-  --navy2:#0f2d46;
+  --dark:#0b1f33;
+  --dark2:#0f2d46;
   --gold:#d4af37;
   --white:#ffffff;
   --muted:#cfd8e3;
@@ -21,122 +25,102 @@
 
 body{
   font-family:'Inter',sans-serif;
-  background:radial-gradient(circle at top left,#162f4f,var(--navy));
+  background:linear-gradient(-45deg,#081a2b,#102f4a,#081a2b);
+  background-size:400% 400%;
+  animation:bg 12s ease infinite;
   color:var(--white);
-  min-height:100vh;
 }
 
-/* Navbar */
+@keyframes bg{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* NAVBAR */
 nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px 40px;
+  padding:22px 40px;
 }
 
 .brand{
   font-family:'Playfair Display',serif;
-  font-size:1.3rem;
+  font-size:1.5rem;
   color:var(--gold);
-  letter-spacing:1px;
-}
-
-.nav-links{
-  display:flex;
-  gap:25px;
-  font-size:.9rem;
 }
 
 .nav-links a{
   color:var(--muted);
+  margin-left:25px;
   text-decoration:none;
+  font-size:.9rem;
 }
 
-.nav-btn{
-  padding:8px 18px;
-  border:1px solid var(--gold);
-  border-radius:20px;
-  color:var(--gold);
-  text-decoration:none;
-  font-size:.85rem;
-}
-
-/* Hero */
+/* HERO */
 .hero{
   display:grid;
   grid-template-columns:1.2fr 1fr;
-  gap:40px;
   align-items:center;
-  padding:60px 40px;
+  gap:40px;
+  padding:70px 40px;
   max-width:1200px;
   margin:auto;
 }
 
-/* Left content */
 .hero h1{
   font-family:'Playfair Display',serif;
   font-size:3rem;
   line-height:1.2;
 }
 
-.hero h1 span{
-  color:var(--gold);
-}
+.hero span{color:var(--gold)}
 
 .hero p{
   margin-top:18px;
-  max-width:520px;
-  line-height:1.7;
   color:var(--muted);
-  font-size:1rem;
+  max-width:540px;
+  line-height:1.7;
 }
 
-.hero .quote{
-  margin-top:12px;
+.quote{
+  margin-top:14px;
   font-style:italic;
-  color:#e0e6ee;
 }
 
-/* Buttons */
-.hero-buttons{
+.btns{
   margin-top:30px;
   display:flex;
   gap:15px;
   flex-wrap:wrap;
 }
 
-.btn-gold{
-  background:linear-gradient(135deg,#f5d76e,var(--gold));
+.btn-main{
+  background:linear-gradient(135deg,#f7dd8b,var(--gold));
   color:#000;
-  padding:14px 30px;
+  padding:14px 32px;
   border-radius:30px;
   text-decoration:none;
   font-weight:600;
-  box-shadow:0 10px 30px rgba(212,175,55,.4);
 }
 
 .btn-outline{
-  border:1px solid rgba(255,255,255,.3);
-  padding:14px 28px;
+  border:1px solid rgba(255,255,255,.4);
+  padding:14px 30px;
   border-radius:30px;
-  color:var(--white);
   text-decoration:none;
+  color:#fff;
 }
 
-/* Right image */
-.hero-image{
-  display:flex;
-  justify-content:center;
-  position:relative;
-}
-
+/* HERO IMAGE */
 .circle{
   width:380px;
   height:380px;
   border-radius:50%;
   overflow:hidden;
   border:6px solid rgba(212,175,55,.6);
-  box-shadow:0 30px 80px rgba(0,0,0,.6);
+  box-shadow:0 30px 90px rgba(0,0,0,.7);
 }
 
 .circle img{
@@ -145,35 +129,89 @@ nav{
   object-fit:cover;
 }
 
-/* Floating WhatsApp */
+/* SECTION */
+section{
+  padding:80px 40px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;
+  margin-bottom:40px;
+}
+
+/* DOCTOR CARD */
+.doctor{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:40px;
+  align-items:center;
+}
+
+.card{
+  background:rgba(255,255,255,.05);
+  padding:30px;
+  border-radius:20px;
+  backdrop-filter:blur(12px);
+}
+
+.card h3{color:var(--gold)}
+.card p{margin-top:10px;color:var(--muted)}
+
+/* SERVICES SLIDER */
+.slider{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.service{
+  background:rgba(255,255,255,.06);
+  padding:25px;
+  border-radius:20px;
+  transition:.3s;
+}
+
+.service:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+
+.service h4{color:var(--gold);margin-bottom:10px}
+
+/* FOOTER */
+footer{
+  background:#061525;
+  padding:40px;
+  text-align:center;
+  color:var(--muted);
+}
+
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:20px;
   right:20px;
   background:#25d366;
-  color:#fff;
   padding:14px 18px;
   border-radius:30px;
+  color:#fff;
   text-decoration:none;
   font-weight:600;
 }
 
-/* Responsive */
 @media(max-width:900px){
-  .hero{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
-  .hero h1{font-size:2.2rem}
-  nav{padding:18px 20px}
-  .hero-buttons{justify-content:center}
+  .hero{grid-template-columns:1fr;text-align:center}
+  .doctor{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
   <div class="brand">PHYSIO INFORMATION</div>
   <div class="nav-links">
@@ -182,45 +220,55 @@ nav{
     <a href="#">Services</a>
     <a href="#">Contact</a>
   </div>
-  <a class="nav-btn" href="tel:9600030932">Call Now</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-
-  <!-- LEFT -->
   <div>
-    <h1>
-      Better Care.<br>
-      Better Movement.<br>
-      <span>Better Than Before.</span>
-    </h1>
+    <h1>Physio Information<br><span>Better Than Before</span></h1>
+    <p>Chennai’s trusted physiotherapy & rehabilitation platform delivering evidence-based care, education, and virtual consultations.</p>
+    <div class="quote">Teaching is better than treating</div>
 
-    <p>
-      Welcome to <strong>Physio Information</strong> — Chennai’s premier
-      physiotherapy platform combining expert clinical care, education,
-      and modern rehabilitation strategies for lasting recovery.
-    </p>
-
-    <div class="quote">
-      “Teaching is better than treating.”
-    </div>
-
-    <div class="hero-buttons">
-      <a class="btn-gold" href="https://wa.me/919600030932">Book Consultation</a>
-      <a class="btn-outline" href="#">Explore Services</a>
+    <div class="btns">
+      <a class="btn-main" href="https://wa.me/919600030932">Book Consultation</a>
+      <a class="btn-outline" href="tel:9600030932">Call Now</a>
     </div>
   </div>
 
-  <!-- RIGHT -->
-  <div class="hero-image">
+  <div style="display:flex;justify-content:center">
     <div class="circle">
-      <!-- Replace this image -->
-      <img src="doctor.jpg" alt="Physiotherapy Consultation">
+      <img src="https://images.unsplash.com/photo-1584467735871-bc0b8f0a8c2b?auto=format&fit=crop&w=900&q=80">
     </div>
   </div>
-
 </section>
+
+<section>
+  <h2 class="section-title">About the Doctor</h2>
+  <div class="doctor">
+    <div class="card">
+      <h3>Dr. Krishna S, PT, PGDCR</h3>
+      <p>Certified Clinical Physiotherapist & Researcher with expertise in musculoskeletal therapy, neuro rehabilitation, and pain science.</p>
+      <p>📍 Chennai, Tamil Nadu / Virtual Consultation</p>
+    </div>
+    <div class="card">
+      <p>Specialized in trigger point therapy, Maitland & Mulligan mobilizations, stroke and Parkinson’s rehabilitation, and customized exercise programs.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Our Specialities</h2>
+  <div class="slider">
+    <div class="service"><h4>Musculoskeletal Rehab</h4><p>Back pain, neck pain, sports injuries.</p></div>
+    <div class="service"><h4>Orthopedic Physiotherapy</h4><p>Post-surgical & joint rehabilitation.</p></div>
+    <div class="service"><h4>Neuro Rehabilitation</h4><p>Stroke, Parkinson’s, spinal injuries.</p></div>
+    <div class="service"><h4>Education-First Care</h4><p>Patient awareness & prevention.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>📞 9600030932 | ✉️ physioinformation360@gmail.com</p>
+  <p>© Physio Information – Better Than Before</p>
+</footer>
 
 <a class="whatsapp" href="https://wa.me/919600030932">WhatsApp</a>
 
