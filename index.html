@@ -1,116 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhysioInfo - Dr. PT. K. Krishna | BPT & PGDCR | Chennai</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* All previous styles EXACTLY the same - just content updated */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; }
-        nav { position: fixed; top: 0; width: 100%; background: rgba(10, 14, 46, 0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 1rem 0; transition: all 0.3s ease; }
-        nav.scrolled { background: rgba(10, 14, 46, 0.98); box-shadow: 0 5px 20px rgba(0,0,0,0.2); }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
-        .logo { font-family: 'Cinzel', serif; font-size: 1.8rem; color: #ffd700; text-decoration: none; }
-        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
-        .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover { color: #ffd700; }
-        .whatsapp-nav { background: #25D366; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; display: flex; align-items: center; gap: 0.3rem; }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
-        .hamburger span { width: 25px; height: 3px; background: #ffd700; transition: 0.3s; }
-        .hero { height: 100vh; background: linear-gradient(135deg, #0a0e2e 0%, #1a237e 50%, #0d47a1 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; position: relative; padding-top: 80px; overflow: hidden; }
-        .hero::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="g" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffd700" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffd700" stop-opacity="0"/></radialGradient></defs><circle cx="20" cy="20" r="2" fill="url(%23g)"><animate attributeName="r" values="2;3;2" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="80" r="1.5" fill="url(%23g)"><animate attributeName="r" values="1.5;2.5;1.5" dur="4s" repeatCount="indefinite"/></circle></svg>') repeat;
-            animation: sparkle 20s linear infinite;
-        }
-        @keyframes sparkle { 0% { transform: translateY(0) rotate(0deg); } 100% { transform: translateY(-100px) rotate(360deg); } }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); animation: glow 2s ease-in-out infinite alternate; }
-        .hero-subtitle { font-size: 1.3rem; opacity: 0.9; margin-bottom: 2rem; font-weight: 300; }
-        @keyframes glow { from { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); } to { text-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.4); } }
-        .cta { display: inline-block; padding: 1rem 2rem; background: linear-gradient(45deg, #ffd700, #ffed4e); color: #0a0e2e; text-decoration: none; font-weight: 500; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4); }
-        .cta:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6); }
-        .whatsapp-cta { background: #25D366 !important; color: white !important; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4) !important; }
-        .whatsapp-cta:hover { box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6) !important; }
-        .services, .about, .contact { padding: 5rem 2rem; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-title { font-family: 'Cinzel', serif; font-size: 2.5rem; color: #0a0e2e; margin-bottom: 3rem; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .card { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(10,14,46,0.1); transition: all 0.3s ease; position: relative; overflow: hidden; text-align: center; }
-        .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #ffd700, #ffed4e); }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(10,14,46,0.2); }
-        .card i { font-size: 3rem; color: #1a237e; margin-bottom: 1rem; }
-        .about { background: linear-gradient(135deg, #0a0e2e 0%, #1a237e 100%); color: white; text-align: center; }
-        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 3rem; }
-        .about-card { background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 20px; backdrop-filter: blur(10px); }
-        .contact { background: #f8f9ff; }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-        .contact-info h3 { color: #0a0e2e; margin-bottom: 1rem; font-family: 'Cinzel', serif; }
-        .contact-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; font-size: 1.1rem; }
-        .contact-item i { font-size: 1.5rem; color: #25D366; width: 40px; }
-        .whatsapp-btn { background: #25D366; color: white; padding: 1rem 1.5rem; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; transition: all 0.3s; margin-top: 1rem; box-shadow: 0 5px 15px rgba(37,211,102,0.3); }
-        .whatsapp-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(37,211,102,0.4); }
-        form { background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(10,14,46,0.1); }
-        .form-group { margin-bottom: 1.5rem; }
-        label { display: block; margin-bottom: 0.5rem; color: #0a0e2e; font-weight: 500; }
-        input, textarea { width: 100%; padding: 1rem; border: 2px solid #e0e6ff; border-radius: 10px; font-family: inherit; transition: border 0.3s; }
-        input:focus, textarea:focus { outline: none; border-color: #ffd700; }
-        button { width: 100%; padding: 1rem; background: linear-gradient(45deg, #ffd700, #ffed4e); color: #0a0e2e; border: none; border-radius: 10px; font-weight: 500; cursor: pointer; transition: all 0.3s; font-size: 1.1rem; }
-        button:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,215,0,0.4); }
-        @media (max-width: 768px) {
-            .hamburger { display: flex; }
-            .nav-links { position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px); background: rgba(10,14,46,0.98); flex-direction: column; justify-content: start; align-items: center; padding-top: 2rem; transition: left 0.3s; }
-            .nav-links.active { left: 0; }
-            .contact-grid, .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .section-title { font-size: 2rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physio Information | Better Than Before</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Roboto',sans-serif;color:#333;line-height:1.6}
+
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;width:100%;
+background:rgba(10,14,46,.95);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+.nav-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+}
+.logo img{height:45px}
+.nav-links{list-style:none;display:flex;gap:20px}
+.nav-links a{color:#fff;text-decoration:none;font-weight:500}
+.nav-links a:hover{color:#ffd700}
+.whatsapp-nav{
+background:#25D366;
+padding:6px 14px;
+border-radius:20px;
+}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.hamburger span{width:25px;height:3px;background:#ffd700}
+
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+position:relative;
+padding-top:90px;
+background:linear-gradient(135deg,#0a0e2e,#1a237e,#0d47a1);
+overflow:hidden;
+}
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(120deg,
+rgba(255,215,0,.15),
+rgba(255,215,0,.02),
+rgba(255,215,0,.15));
+animation:royalGlow 8s ease-in-out infinite;
+z-index:-1;
+}
+@keyframes royalGlow{
+0%{opacity:.3}
+50%{opacity:.6}
+100%{opacity:.3}
+}
+.hero .bg{
+position:absolute;
+inset:0;
+background:url('banner.jpg') center/cover no-repeat;
+opacity:.18;
+z-index:-2;
+}
+.hero img{width:150px;margin-bottom:20px}
+.hero h1{
+font-family:'Cinzel',serif;
+font-size:3rem;
+letter-spacing:2px;
+color:#ffd700;
+}
+.hero p{max-width:600px;margin:15px auto;font-size:1.1rem}
+.cta{
+display:inline-block;
+margin-top:20px;
+padding:12px 30px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:500;
+}
+.cta:hover{opacity:.9}
+
+/* SECTIONS */
+section{padding:80px 20px}
+.container{max-width:1200px;margin:auto}
+.section-title{
+text-align:center;
+font-family:'Cinzel',serif;
+font-size:2.2rem;
+margin-bottom:50px;
+color:#0a0e2e;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.1);
+transition:.3s;
+}
+.card:hover{transform:translateY(-8px)}
+.card i{font-size:40px;color:#1a237e;margin-bottom:15px}
+
+/* ABOUT */
+.about{
+background:linear-gradient(135deg,#0a0e2e,#1a237e);
+color:white;
+text-align:center;
+}
+
+/* CONTACT */
+.contact{background:#f6f7ff}
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+.contact-item{
+display:flex;
+gap:15px;
+margin-bottom:15px;
+font-size:1.1rem;
+}
+.contact-item i{color:#25D366;font-size:22px}
+
+/* FORM */
+form{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,.1);
+}
+input,textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:15px;
+border:2px solid #e0e0ff;
+border-radius:10px;
+}
+button{
+width:100%;
+padding:12px;
+background:linear-gradient(45deg,#ffd700,#ffed4e);
+border:none;
+border-radius:10px;
+font-weight:500;
+cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.hamburger{display:flex}
+.nav-links{
+position:fixed;
+top:80px;
+left:-100%;
+flex-direction:column;
+background:#0a0e2e;
+width:100%;
+height:100vh;
+padding-top:30px;
+transition:.3s;
+}
+.nav-links.active{left:0}
+.contact-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
+
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="#home" class="logo">PhysioInfo</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="https://wa.me/919600030932?text=Hi%20Dr.%20Krishna" class="whatsapp-nav" target="_blank"><i class="fab fa-whatsapp"></i> 9600030932</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-    </nav>
 
-    <section id="home" class="hero">
-        <h1>PhysioInfo</h1>
-        <p class="hero-subtitle">Dr. PT. K. Krishna | BPT & PGDCR<br>Clinical Physiotherapy Expert • Chennai</p>
-        <a href="https://wa.me/919600030932?text=Hi%20Dr.%20Krishna%2C%20I%27d%20like%20to%20book%20an%20appointment." class="cta whatsapp-cta" target="_blank">
-            <i class="fab fa-whatsapp"></i> Book Appointment Now
-        </a>
-    </section>
+<nav>
+<div class="nav-container">
+<a class="logo" href="#home"><img src="logo.png" alt="Physio Information"></a>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a class="whatsapp-nav" href="https://wa.me/919600030932" target="_blank">
+<i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+</ul>
+<div class="hamburger"><span></span><span></span><span></span></div>
+</div>
+</nav>
 
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Expert Physiotherapy Services</h2>
-            <div class="grid">
-                <div class="card">
-                    <i class="fas fa-bone"></i>
-                    <h3>Musculoskeletal Care</h3>
-                    <p>Trigger points, myofascial release, Maitland & Mulligan mobilizations.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-brain"></i>
-                    <h3>Neurological Rehab</h3>
-                    <p>Stroke, Parkinson's, advanced rehabilitation protocols.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-heartbeat"></i>
-                    <h3>Pain Management</h3>
-                    <p>Clinical exercises & manual therapy for chronic pain relief.</p>
+<section id="home" class="hero">
+<div class="bg"></div>
+<img src="logo.png" alt="Physio Information Logo">
+<h1>PHYSIO INFORMATION</h1>
+<p><em>Better Than Before</em></p>
+<p>Professional Physiotherapy Care in Chennai<br>
+Musculoskeletal • Neurological • Pain Management</p>
+<a class="cta" href="https://wa.me/919600030932" target="_blank">
+<i class="fab fa-whatsapp"></i> Book Appointment
+</a>
+</section>
+
+<section id="services">
+<div class="container">
+<h2 class="section-title">Our Services</h2>
+<div class="grid">
+<div class="card"><i class="fas fa-bone"></i>
+<h3>Musculoskeletal Therapy</h3>
+<p>Back pain, sports injuries & manual therapy.</p></div>
+<div class="card"><i class="fas fa-brain"></i>
+<h3>Neurological Rehab</h3>
+<p>Stroke & neurological recovery programs.</p></div>
+<div class="card"><i class="fas fa-heartbeat"></i>
+<h3>Pain Management</h3>
+<p>Evidence-based pain relief techniques.</p></div>
+<div class="card"><i class="fas fa-flask"></i>
+<h3>Clinical Research</h3>
+<p>PGDCR-backed physiotherapy protocols.</p></div>
+</div>
+</div>
+</section>
+
+<section id="about" class="about">
+<div class="container">
+<h2 class="section-title" style="color:white">Dr. Krishna S, PT, PGDCR</h2>
+<p>Clinical Physiotherapist & Researcher<br>
+2+ years experience at SPARRC, Chennai.<br>
+Committed to evidence-based recovery.</p>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<div class="container">
+<h2 class="section-title">Contact Us</h2>
+<div class="contact-grid">
+<div>
+<div class="contact-item"><i class="fab fa-whatsapp"></i> +91 96000 30932</div>
+<div class="contact-item"><i class="fas fa-envelope"></i> physioinformation360@gmail.com</div>
+<div class="contact-item"><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</div>
+</div>
+<form>
+<label>Name</label>
+<input type="text" required>
+<label>Phone</label>
+<input type="tel" required>
+<label>Message</label>
+<textarea rows="4" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
+</div>
+</section>
+
+<script>
+document.querySelector(".hamburger").onclick=()=>{
+document.querySelector(".nav-links").classList.toggle("active");
+};
+</script>
+
+</body>
+    </html>                    <p>Clinical exercises & manual therapy for chronic pain relief.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-flask"></i>
