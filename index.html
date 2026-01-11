@@ -1,41 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Physio Information | Dr. Krishna S</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #0a6cff, #0f9d8a);
+      color: #222;
+    }
+    header {
+      background: white;
+      text-align: center;
+      padding: 30px 20px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+    header img {
+      width: 120px;
+      margin-bottom: 15px;
+    }
+    header h1 {
+      margin: 5px 0;
+      font-size: 32px;
+      color: #0a6cff;
+      letter-spacing: 2px;
+    }
+    header p {
+      margin: 5px 0;
+      color: #555;
+      font-size: 16px;
+    }
+    .tagline {
+      font-style: italic;
+      color: #0f9d8a;
+      font-weight: 600;
+    }
+    nav {
+      margin-top: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      margin: 6px;
+      padding: 10px 18px;
+      background: #0a6cff;
+      color: white;
+      border-radius: 25px;
+      font-size: 14px;
+      display: inline-block;
+    }
+    .container {
+      padding: 25px;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .card h2 {
+      color: #0a6cff;
+      margin-top: 0;
+    }
+    .card p {
+      line-height: 1.7;
+      color: #444;
+    }
+    .features li {
+      margin-bottom: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-
-<header class="header">
+<header>
+  <img src="logo.png" alt="Physio Information Logo">
   <h1>PHYSIO INFORMATION</h1>
-  <p class="tagline">Better Than Before</p>
-  <p class="slogan">“Teaching is better than treating”</p>
+  <p>Better Than Before</p>
+  <p class="tagline">“Teaching is better than treating”</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Admin Login</a>
+  </nav>
 </header>
 
-<nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="login.html">Admin Login</a>
-</nav>
+<div class="container">
+  <div class="card">
+    <h2>About PHYSIO INFORMATION</h2>
+    <p><strong>PHYSIO INFORMATION</strong> is a modern, evidence-based physiotherapy and rehabilitation service focused on patient education, long-term recovery, and functional independence.</p>
+    <p>We believe that understanding the condition is the first step toward recovery. Our approach empowers patients through knowledge, guided therapy, and structured rehabilitation programs.</p>
+  </div>
 
-<section class="hero">
-  <h2>Professional Physiotherapy Care</h2>
-  <p>
-    Managed by <strong>Dr. Krishna S, PT, PGDCR</strong><br>
-    Evidence-based treatment, patient education, and recovery-focused care.
-  </p>
-</section>
+  <div class="card">
+    <h2>Professional Care</h2>
+    <p>Managed by <strong>Dr. Krishna S, PT, PGDCR</strong>, PHYSIO INFORMATION provides personalized physiotherapy solutions using the latest clinical practices and recovery-focused treatment plans.</p>
+  </div>
 
-<section class="features">
-  <div class="card">✔ Personalized Treatment</div>
-  <div class="card">✔ Session Tracking</div>
-  <div class="card">✔ Professional Management</div>
-</section>
+  <div class="card">
+    <h2>Our Core Strengths</h2>
+    <ul class="features">
+      <li>✔ Personalized physiotherapy treatment plans</li>
+      <li>✔ Session tracking and progress monitoring</li>
+      <li>✔ Evidence-based rehabilitation programs</li>
+      <li>✔ Patient education & long-term recovery focus</li>
+      <li>✔ Professional clinic management system</li>
+    </ul>
+  </div>
+</div>
 
-<footer class="footer">
-  <p>© 2026 Physio Information</p>
-  <p>Dr. Krishna S, PT, PGDCR</p>
+<footer>
+  © 2026 Physio Information <br>
+  Dr. Krishna S, PT, PGDCR
 </footer>
-
 </body>
 </html>
- 

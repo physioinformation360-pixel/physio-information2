@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin Login | Physio Information</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Admin Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body class="login-page">
+<body style="text-align:center; padding-top:50px; font-family:Arial">
+<h2>Admin Login</h2>
+<input id="user" placeholder="Username"><br><br>
+<input id="pass" type="password" placeholder="Password"><br><br>
+<button onclick="login()">Login</button>
 
-<div class="login-box">
-  <h2>Admin Login</h2>
-
-  <input type="text" id="username" placeholder="Username">
-  <input type="password" id="password" placeholder="Password">
-
-  <button onclick="login()">Login</button>
-
-  <p class="note">Authorized access only</p>
-</div>
-
-<script src="auth.js"></script>
+<script>
+function login(){
+  if(user.value==="admin" && pass.value==="admin123"){
+    alert("Login successful (Backend will be added later)");
+  } else {
+    alert("Invalid credentials");
+  }
+}
+</script>
 </body>
 </html>
