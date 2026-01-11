@@ -2,123 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Physio Information | Dr. Krishna S</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(135deg, #0a6cff, #0f9d8a);
-      color: #222;
-    }
-    header {
-      background: white;
-      text-align: center;
-      padding: 30px 20px;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-    }
-    header img {
-      width: 120px;
-      margin-bottom: 15px;
-    }
-    header h1 {
-      margin: 5px 0;
-      font-size: 32px;
-      color: #0a6cff;
-      letter-spacing: 2px;
-    }
-    header p {
-      margin: 5px 0;
-      color: #555;
-      font-size: 16px;
-    }
-    .tagline {
-      font-style: italic;
-      color: #0f9d8a;
-      font-weight: 600;
-    }
-    nav {
-      margin-top: 20px;
-    }
-    nav a {
-      text-decoration: none;
-      margin: 6px;
-      padding: 10px 18px;
-      background: #0a6cff;
-      color: white;
-      border-radius: 25px;
-      font-size: 14px;
-      display: inline-block;
-    }
-    .container {
-      padding: 25px;
-    }
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 25px;
-      margin-bottom: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
-    .card h2 {
-      color: #0a6cff;
-      margin-top: 0;
-    }
-    .card p {
-      line-height: 1.7;
-      color: #444;
-    }
-    .features li {
-      margin-bottom: 10px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: white;
-      font-size: 14px;
-    }
-  </style>
+  <title>Physio Information | Professional Physiotherapy Care</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <img src="logo.png" alt="Physio Information Logo">
+
+<header class="header">
+  <img src="logo.png" alt="Physio Information Logo" class="logo">
   <h1>PHYSIO INFORMATION</h1>
-  <p>Better Than Before</p>
-  <p class="tagline">“Teaching is better than treating”</p>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="login.html">Admin Login</a>
-  </nav>
+  <p class="tagline">Better Than Before</p>
+  <p class="slogan">“Teaching is better than treating”</p>
 </header>
 
-<div class="container">
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="login.html" class="login-btn">Admin Login</a>
+</nav>
+
+<section class="hero">
+  <h2>Professional Physiotherapy Care</h2>
+  <p>
+    PHYSIO INFORMATION is a modern physiotherapy platform dedicated to
+    evidence-based treatment, patient education, and long-term recovery.
+  </p>
+  <p>
+    Managed by <strong>Dr. Krishna S, PT, PGDCR</strong>, we combine clinical
+    expertise with technology to deliver personalized rehabilitation care.
+  </p>
+</section>
+
+<section class="features">
   <div class="card">
-    <h2>About PHYSIO INFORMATION</h2>
-    <p><strong>PHYSIO INFORMATION</strong> is a modern, evidence-based physiotherapy and rehabilitation service focused on patient education, long-term recovery, and functional independence.</p>
-    <p>We believe that understanding the condition is the first step toward recovery. Our approach empowers patients through knowledge, guided therapy, and structured rehabilitation programs.</p>
+    <h3>✔ Personalized Treatment</h3>
+    <p>Customized physiotherapy programs designed for each patient’s condition and goals.</p>
   </div>
 
   <div class="card">
-    <h2>Professional Care</h2>
-    <p>Managed by <strong>Dr. Krishna S, PT, PGDCR</strong>, PHYSIO INFORMATION provides personalized physiotherapy solutions using the latest clinical practices and recovery-focused treatment plans.</p>
+    <h3>✔ Session Tracking</h3>
+    <p>Structured session monitoring for measurable progress and faster recovery.</p>
   </div>
 
   <div class="card">
-    <h2>Our Core Strengths</h2>
-    <ul class="features">
-      <li>✔ Personalized physiotherapy treatment plans</li>
-      <li>✔ Session tracking and progress monitoring</li>
-      <li>✔ Evidence-based rehabilitation programs</li>
-      <li>✔ Patient education & long-term recovery focus</li>
-      <li>✔ Professional clinic management system</li>
-    </ul>
+    <h3>✔ Professional Management</h3>
+    <p>Accurate clinical records, reports, and patient follow-up using a digital system.</p>
   </div>
-</div>
 
-<footer>
-  © 2026 Physio Information <br>
-  Dr. Krishna S, PT, PGDCR
+  <div class="card">
+    <h3>✔ Evidence-Based Care</h3>
+    <p>All treatments follow scientific research and international physiotherapy standards.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Physio Information</p>
+  <p>Dr. Krishna S, PT, PGDCR</p>
 </footer>
+
 </body>
 </html>
