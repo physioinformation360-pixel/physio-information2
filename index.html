@@ -1,40 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="Physio Information Chennai – Evidence-based physiotherapy, rehabilitation, and virtual consultation by Dr. Krishna S. Teaching is better than treating.">
-<meta name="keywords" content="Physiotherapy Chennai, Rehabilitation Center, Neuro Rehab, Orthopedic Physio, Online Physio Consultation">
-<meta name="author" content="Dr. Krishna S, PT">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Physio Information | Better Than Before</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Premium Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --dark:#0b1f33;
-  --dark2:#0f2d46;
-  --gold:#d4af37;
-  --white:#ffffff;
-  --muted:#cfd8e3;
+  --bg1:#1a062f;
+  --bg2:#2a0b45;
+  --accent:#c084fc;
+  --gold:#f5c97a;
+  --text:#ffffff;
+  --muted:#d1cbe6;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-  font-family:'Inter',sans-serif;
-  background:linear-gradient(-45deg,#081a2b,#102f4a,#081a2b);
-  background-size:400% 400%;
-  animation:bg 12s ease infinite;
-  color:var(--white);
-}
-
-@keyframes bg{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top left,var(--bg2),var(--bg1));
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -46,81 +37,117 @@ nav{
 }
 
 .brand{
-  font-family:'Playfair Display',serif;
-  font-size:1.5rem;
-  color:var(--gold);
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand img{
+  width:40px;
+  height:40px;
+}
+
+.brand span{
+  font-weight:600;
+  letter-spacing:.5px;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+  font-size:.9rem;
 }
 
 .nav-links a{
   color:var(--muted);
-  margin-left:25px;
   text-decoration:none;
-  font-size:.9rem;
+}
+
+.nav-btn{
+  border:1px solid var(--accent);
+  padding:10px 20px;
+  border-radius:25px;
+  color:var(--accent);
+  text-decoration:none;
+  font-size:.85rem;
 }
 
 /* HERO */
 .hero{
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  align-items:center;
-  gap:40px;
-  padding:70px 40px;
   max-width:1200px;
   margin:auto;
+  padding:80px 40px;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:50px;
+  align-items:center;
 }
 
+/* LEFT */
 .hero h1{
   font-family:'Playfair Display',serif;
-  font-size:3rem;
-  line-height:1.2;
+  font-size:3.4rem;
+  line-height:1.15;
 }
 
-.hero span{color:var(--gold)}
+.hero h1 span{
+  color:var(--accent);
+}
 
 .hero p{
-  margin-top:18px;
+  margin-top:20px;
+  max-width:560px;
+  line-height:1.8;
   color:var(--muted);
-  max-width:540px;
-  line-height:1.7;
 }
 
-.quote{
-  margin-top:14px;
+.tagline{
+  margin-top:12px;
   font-style:italic;
+  color:#f0eaff;
 }
 
-.btns{
-  margin-top:30px;
+/* BUTTONS */
+.actions{
+  margin-top:35px;
   display:flex;
-  gap:15px;
+  gap:18px;
   flex-wrap:wrap;
 }
 
-.btn-main{
-  background:linear-gradient(135deg,#f7dd8b,var(--gold));
-  color:#000;
-  padding:14px 32px;
+.primary{
+  background:linear-gradient(135deg,#d8b4fe,#a855f7);
+  color:#12001e;
+  padding:15px 34px;
   border-radius:30px;
   text-decoration:none;
   font-weight:600;
+  box-shadow:0 20px 40px rgba(168,85,247,.45);
 }
 
-.btn-outline{
-  border:1px solid rgba(255,255,255,.4);
-  padding:14px 30px;
+.secondary{
+  border:1px solid rgba(255,255,255,.25);
+  padding:15px 30px;
   border-radius:30px;
+  color:var(--text);
   text-decoration:none;
-  color:#fff;
 }
 
-/* HERO IMAGE */
+/* RIGHT IMAGE */
+.visual{
+  position:relative;
+  display:flex;
+  justify-content:center;
+}
+
 .circle{
   width:380px;
   height:380px;
   border-radius:50%;
   overflow:hidden;
-  border:6px solid rgba(212,175,55,.6);
-  box-shadow:0 30px 90px rgba(0,0,0,.7);
+  border:5px solid rgba(192,132,252,.6);
+  box-shadow:0 30px 80px rgba(0,0,0,.6);
+  background:#000;
 }
 
 .circle img{
@@ -129,146 +156,101 @@ nav{
   object-fit:cover;
 }
 
-/* SECTION */
-section{
-  padding:80px 40px;
-  max-width:1200px;
-  margin:auto;
-}
-
-.section-title{
-  text-align:center;
-  font-family:'Playfair Display',serif;
-  font-size:2.2rem;
-  margin-bottom:40px;
-}
-
-/* DOCTOR CARD */
-.doctor{
-  display:grid;
-  grid-template-columns:1fr 2fr;
-  gap:40px;
-  align-items:center;
-}
-
-.card{
-  background:rgba(255,255,255,.05);
-  padding:30px;
-  border-radius:20px;
-  backdrop-filter:blur(12px);
-}
-
-.card h3{color:var(--gold)}
-.card p{margin-top:10px;color:var(--muted)}
-
-/* SERVICES SLIDER */
-.slider{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-}
-
-.service{
-  background:rgba(255,255,255,.06);
-  padding:25px;
-  border-radius:20px;
-  transition:.3s;
-}
-
-.service:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 40px rgba(0,0,0,.4);
-}
-
-.service h4{color:var(--gold);margin-bottom:10px}
-
-/* FOOTER */
-footer{
-  background:#061525;
-  padding:40px;
-  text-align:center;
-  color:var(--muted);
+/* FLOATING ELEMENTS */
+.glow{
+  position:absolute;
+  width:120px;
+  height:120px;
+  background:rgba(192,132,252,.25);
+  filter:blur(80px);
+  border-radius:50%;
+  top:-40px;
+  right:-20px;
 }
 
 /* WHATSAPP */
 .whatsapp{
   position:fixed;
-  bottom:20px;
-  right:20px;
+  bottom:22px;
+  right:22px;
   background:#25d366;
-  padding:14px 18px;
-  border-radius:30px;
   color:#fff;
+  padding:14px 20px;
+  border-radius:30px;
   text-decoration:none;
   font-weight:600;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
+/* RESPONSIVE */
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;text-align:center}
-  .doctor{grid-template-columns:1fr}
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero h1{font-size:2.4rem}
+  nav{padding:20px}
+  .actions{justify-content:center}
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="brand">PHYSIO INFORMATION</div>
+  <div class="brand">
+    <img src="logo.png" alt="Physio Information Logo">
+    <span>Physio Information</span>
+  </div>
+
   <div class="nav-links">
     <a href="#">Home</a>
     <a href="#">About</a>
     <a href="#">Services</a>
     <a href="#">Contact</a>
   </div>
+
+  <a class="nav-btn" href="tel:9600030932">Start Consultation</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
+
+  <!-- LEFT -->
   <div>
-    <h1>Physio Information<br><span>Better Than Before</span></h1>
-    <p>Chennai’s trusted physiotherapy & rehabilitation platform delivering evidence-based care, education, and virtual consultations.</p>
-    <div class="quote">Teaching is better than treating</div>
+    <h1>
+      Move Better.<br>
+      Heal Smarter.<br>
+      <span>Better Than Before.</span>
+    </h1>
 
-    <div class="btns">
-      <a class="btn-main" href="https://wa.me/919600030932">Book Consultation</a>
-      <a class="btn-outline" href="tel:9600030932">Call Now</a>
+    <p>
+      <strong>Physio Information</strong> is Chennai’s premium physiotherapy
+      platform delivering evidence-based rehabilitation, expert clinical care,
+      and education-first recovery for long-term health outcomes.
+    </p>
+
+    <div class="tagline">
+      “Teaching is better than treating.”
+    </div>
+
+    <div class="actions">
+      <a class="primary" href="https://wa.me/919600030932">Book Consultation</a>
+      <a class="secondary" href="#">Explore Services</a>
     </div>
   </div>
 
-  <div style="display:flex;justify-content:center">
+  <!-- RIGHT -->
+  <div class="visual">
+    <div class="glow"></div>
     <div class="circle">
-      <img src="https://images.unsplash.com/photo-1584467735871-bc0b8f0a8c2b?auto=format&fit=crop&w=900&q=80">
+      <!-- Replace with clinic / treatment image -->
+      <img src="doctor.jpg" alt="Physiotherapy Care">
     </div>
   </div>
-</section>
 
-<section>
-  <h2 class="section-title">About the Doctor</h2>
-  <div class="doctor">
-    <div class="card">
-      <h3>Dr. Krishna S, PT, PGDCR</h3>
-      <p>Certified Clinical Physiotherapist & Researcher with expertise in musculoskeletal therapy, neuro rehabilitation, and pain science.</p>
-      <p>📍 Chennai, Tamil Nadu / Virtual Consultation</p>
-    </div>
-    <div class="card">
-      <p>Specialized in trigger point therapy, Maitland & Mulligan mobilizations, stroke and Parkinson’s rehabilitation, and customized exercise programs.</p>
-    </div>
-  </div>
 </section>
-
-<section>
-  <h2 class="section-title">Our Specialities</h2>
-  <div class="slider">
-    <div class="service"><h4>Musculoskeletal Rehab</h4><p>Back pain, neck pain, sports injuries.</p></div>
-    <div class="service"><h4>Orthopedic Physiotherapy</h4><p>Post-surgical & joint rehabilitation.</p></div>
-    <div class="service"><h4>Neuro Rehabilitation</h4><p>Stroke, Parkinson’s, spinal injuries.</p></div>
-    <div class="service"><h4>Education-First Care</h4><p>Patient awareness & prevention.</p></div>
-  </div>
-</section>
-
-<footer>
-  <p>📞 9600030932 | ✉️ physioinformation360@gmail.com</p>
-  <p>© Physio Information – Better Than Before</p>
-</footer>
 
 <a class="whatsapp" href="https://wa.me/919600030932">WhatsApp</a>
 
